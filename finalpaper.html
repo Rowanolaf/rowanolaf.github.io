@@ -23,21 +23,37 @@
 
 
 		<!-- Main -->
+			<style>
+    				.pdf {
+       					width: 100%;
+        				aspect-ratio: 4 / 3;
+   				 }
+    				.pdf,
+    				html,
+    				body {
+       					height: 100%;
+        				margin: 0;
+        				padding: 0;
+    				}
+   				h1,
+   					h3 {
+        				text-align: center;
+   					}
+
+    				h1 {
+        				color: green;
+    				}
+			</style>
+
 			<body>
-  				<div id="adobe-dc-view"></div>
- 			 	<script type="text/javascript">
-   				document.addEventListener("adobe_dc_view_sdk.ready", function()
-   				{				
-      					var adobeDCView = new AdobeDC.View({clientId: "aa80d2bb6e0240069240bf26b41b05e5", divId: "adobe-dc-view"});
-      					adobeDCView.previewFile(
-    					{
-         					content:  {location: {url: "rowanolaf.github.io/ML_Paper.pdf"}},
-         					metaData: {fileName: "ML_Paper.pdf"}
-     					});
-  				 });
- 			 </script>
+			        <h1>GeeksforGeeks</h1>
+			        <h3>Embedding the PDF file Using Iframe Tag</h3>
+			        <iframe class="pdf" 
+			                src="/ML_Paper.pdf
+			            width="800" height="500">
+			        </iframe>
 			</body>
-			</html>
+
 <!--Get the samples from https://www.adobe.com/go/pdfembedapi_samples-->
 
 		<!---
