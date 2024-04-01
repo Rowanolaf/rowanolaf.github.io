@@ -24,7 +24,17 @@
 
 
 		<!-- Main -->
-			<div id="main">
+			<div id="adobe-dc-view" style="height: 360px; width: 500px;"></div>
+			<script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
+			<script type="text/javascript">
+				document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+					var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
+					adobeDCView.previewFile({
+						content:{location: {url: "https://acrobatservices.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
+						metaData:{fileName: "Bodea Brochure.pdf"}
+					}, {embedMode: "SIZED_CONTAINER"});
+				});
+			</script>
 				<style>
 			      	div.scroll {
 				        background-color: #;
@@ -39,6 +49,7 @@
 				  </head>
 				  <body>
 				    <h2 align="center">Machine Learning and ACL Injury</h2>
+				
 				    <div class="scroll">
 				      Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
 				      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s 
